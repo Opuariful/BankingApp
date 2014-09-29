@@ -9,46 +9,33 @@ namespace BankingApp
 {
     class Account
     {
-        private string number;
-        private string name;
+        public string AccountNumber { get; private set; }
+        public string Name { get; private set; }
+
         private double balance;
-
-
-        public string Number
-        {
-            set
-            {number = value;}
-
-            get
-            {return number;}
-        }
-
-        public string Name
-        {
-            set
-            {name = value;}
-
-            get
-            {return name;}
-        }
-
+        
         public double Balance
         {
-            
-
-            get
-            {
-                return balance;
-            }
+            get { return balance; }
         }
+
+        public Account(string accountNumber, string name)
+        {
+            AccountNumber = accountNumber;
+            Name = name;
+
+        }
+
+
+
         public void Deposite(double amount)
         {
-            balance += amount;
+            balance = Balance + amount;
         }
 
         public void Withdraw (double amount)
         {
-            balance -= amount;
+            balance = Balance - amount;
         }
     }
 }

@@ -26,9 +26,8 @@ namespace BankingApp
 
         private void createButton_Click(object sender, EventArgs e)
         {
-                anAccount= new Account();
-                anAccount.Number=accountNoTextBox.Text;
-                anAccount.Name= customerNameTextBox.Text;
+                anAccount= new Account(accountNoTextBox.Text,customerNameTextBox.Text);
+                
                
                 MessageBox.Show(anAccount.Name + @", Your Account Has Created!");
                 createButton.Enabled = false;
@@ -73,7 +72,7 @@ namespace BankingApp
         {
             if (anAccount != null)
             {
-                MessageBox.Show(anAccount.Name + @", your account number: " + anAccount.Number + @" and it's balance: " + anAccount.Balance + @"Taka");
+                MessageBox.Show(anAccount.Name + @", your account number: " + anAccount.AccountNumber + @" and it's balance: " + anAccount.Balance + @"Taka");
             }
             else
             {
